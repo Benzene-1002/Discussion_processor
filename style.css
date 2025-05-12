@@ -1,33 +1,48 @@
-body {
-  font-family: sans-serif;
-  background: #f5f5f5;
-  text-align: center;
+/* 問題全体のスタイル */
+#question {
+  font-size: 1.5rem; /* 問題文の大きさ */
+  margin-bottom: 20px; /* 問題と選択肢の間隔 */
+  text-align: center; /* 中央寄せ */
+}
+
+/* 選択肢リストのスタイル */
+#choices {
+  list-style-type: none; /* リストの番号なし */
+  padding: 0;
   margin: 0;
-  padding: 2em;
+  display: flex;
+  flex-direction: column; /* 縦並びに */
+  align-items: center; /* 中央寄せ */
 }
 
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-#quiz-box {
-  margin-top: 1em;
-}
-
+/* 各選択肢のスタイル */
 #choices li {
-  margin: 10px 0;
-  list-style: none;
-  cursor: pointer;
-  background: #eee;
-  padding: 0.5em;
-  border-radius: 8px;
+  background-color: #f0f0f0; /* 背景色 */
+  border-radius: 8px; /* 角丸 */
+  padding: 15px 25px; /* 内側の余白 */
+  margin: 10px 0; /* 選択肢間の間隔 */
+  width: 80%; /* 横幅の調整 */
+  text-align: center; /* 中央寄せ */
+  cursor: pointer; /* マウスカーソルをポインタに */
+  transition: background-color 0.3s; /* ホバー時の色変更のアニメーション */
 }
 
 #choices li:hover {
-  background: #ddd;
+  background-color: #d0d0d0; /* ホバー時に色を変更 */
+}
+
+#next-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #4CAF50; /* ボタンの色 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#next-button:hover {
+  background-color: #45a049; /* ボタンホバー時 */
 }
