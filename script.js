@@ -1,20 +1,22 @@
-const questions = [
-  {
-    question: "日本の首都はどこ？",
-    choices: ["大阪", "東京", "札幌", "福岡"],
-    answer: "東京"
-  },
-  {
-    question: "3 + 5 は？",
-    choices: ["5", "8", "10", "7"],
-    answer: "8"
-  },
-  {
-    question: "富士山の高さは？",
-    choices: ["3776m", "3000m", "2800m", "4000m"],
-    answer: "3776m"
-  }
-];
+let questions = [];
+
+// ←★ あなたのシートIDとタブ名（例：Sheet1）に変更してください
+const sheetURL = "https://opensheet.elk.sh/1ABCdefGHIJKLMNOPQRSTUVXYZ/Sheet1";
+
+fetch(sheetURL)
+  .then(res => res.json())
+  .then(data => {
+    questions = data.map(row => ({
+      question: row.question,
+      choices: [row.choice1, row.choice2, row.choice3, row.choice4],
+      answer: row.answer
+    }));
+    loadRandomQuestion();
+  })
+  .catch(err => {
+    document.getElementById("question").textContent = "データの読み込みに失敗しました";
+    console.error(err);
+  });
 
 function loadRandomQuestion() {
   const q = questions[Math.floor(Math.random() * questions.length)];
@@ -26,17 +28,10 @@ function loadRandomQuestion() {
     const li = document.createElement("li");
     li.textContent = choice;
     li.onclick = () => {
-      if (choice === q.answer) {
-        alert("正解！");
-      } else {
-        alert("不正解！");
-      }
+      alert(choice === q.answer ? "正解！" : `不正解！正解は「${q.answer}」`);
     };
     choicesList.appendChild(li);
   });
 }
 
 document.getElementById("next-button").onclick = loadRandomQuestion;
-
-// 初期表示
-loadRandomQuestion();
