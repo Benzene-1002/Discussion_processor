@@ -1,0 +1,33 @@
+body {
+  font-family: sans-serif;
+  background: #f5f5f5;
+  text-align: center;
+  margin: 0;
+  padding: 2em;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#quiz-box {
+  margin-top: 1em;
+}
+
+#choices li {
+  margin: 10px 0;
+  list-style: none;
+  cursor: pointer;
+  background: #eee;
+  padding: 0.5em;
+  border-radius: 8px;
+}
+
+#choices li:hover {
+  background: #ddd;
+}
