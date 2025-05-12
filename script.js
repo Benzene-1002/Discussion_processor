@@ -1,7 +1,7 @@
 let questions = [];
 
-// ←★ あなたのシートIDとタブ名（例：Sheet1）に変更してください
-const sheetURL = "https://opensheet.elk.sh/1qLvFe3OLQ1015LLAPu_nU7Ty0CQysbiuAO12FxLj6gM/data";
+// ←★ あなたのスプレッドシートに合わせたURL（タブ名: シート1）
+const sheetURL = "https://opensheet.elk.sh/1qLvFe3OLQ1015LLAPu_nU7Ty0CQysbiuAO12FxLj6gM/シート1";
 
 fetch(sheetURL)
   .then(res => res.json())
@@ -19,6 +19,8 @@ fetch(sheetURL)
   });
 
 function loadRandomQuestion() {
+  if (questions.length === 0) return;
+
   const q = questions[Math.floor(Math.random() * questions.length)];
   document.getElementById("question").textContent = q.question;
 
