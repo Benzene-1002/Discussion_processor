@@ -1,8 +1,20 @@
-/* 問題全体のスタイル */
-#question {
-  font-size: 1.5rem; /* 問題文の大きさ */
-  margin-bottom: 20px; /* 問題と選択肢の間隔 */
-  text-align: center; /* 中央寄せ */
+/* 全体のコンテナを中央に配置 */
+.container {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  justify-content: center; /* 垂直方向中央 */
+  align-items: center; /* 水平方向中央 */
+  height: 100vh; /* 画面全体の高さを使う */
+  text-align: center; /* 文字を中央に */
+  padding: 0 20px; /* 余白 */
+}
+
+/* 問題文、タイトルのスタイル */
+#question, #title {
+  font-size: 1.5rem; /* 文字サイズ */
+  margin-bottom: 20px; /* 下の余白 */
+  width: 100%; /* 幅を100%に */
+  max-width: 600px; /* 最大幅を指定して、長すぎないように */
 }
 
 /* 選択肢リストのスタイル */
@@ -14,24 +26,25 @@
   flex-direction: column; /* 縦並び */
   align-items: center; /* 水平方向の中央揃え */
   justify-content: center; /* 垂直方向も中央揃え */
-  width: 100%; /* 親要素に合わせて幅を調整 */
-  box-sizing: border-box; /* 幅にパディングやマージンが影響しないように */
+  width: 100%; /* 親要素の幅に合わせる */
+  box-sizing: border-box; /* 幅やパディングが影響しないように */
 }
 
-/* 各選択肢のボタンスタイル */
+/* 各選択肢のスタイル */
 #choices li {
   background-color: #f0f0f0; /* 背景色 */
   border-radius: 8px; /* 角丸 */
   padding: 15px 25px; /* 内側の余白 */
   margin: 10px 0; /* 選択肢間の間隔 */
-  width: 80%; /* 幅の調整 */
-  text-align: center; /* ボタン内の文字を中央揃え */
+  width: 80%; /* 横幅を調整 */
+  max-width: 400px; /* 最大幅を指定 */
+  text-align: center; /* ボタン内のテキストを中央揃え */
   cursor: pointer; /* マウスカーソルをポインタに */
   transition: background-color 0.3s; /* ホバー時の色変更のアニメーション */
 }
 
 #choices li:hover {
-  background-color: #d0d0d0; /* ホバー時に背景色を変更 */
+  background-color: #d0d0d0; /* ホバー時の色 */
 }
 
 /* 次の問題ボタンのスタイル */
