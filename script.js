@@ -30,7 +30,7 @@ function loadRandomQuestion() {
     const li = document.createElement("li");
     li.textContent = choice;
     li.onclick = () => {
-      alert(choice === q.answer ? "正解！" : `不正解！正解は「${q.answer}」`);
+      alert(choice === q.answer ? "解説！" : `お疲れ様！解説は「${q.answer}」`);
     };
     choicesList.appendChild(li);
   });
