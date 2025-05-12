@@ -1,4 +1,4 @@
-/* 全体のコンテナを中央に配置 */
+/* 全体のコンテナ（中央配置） */
 .container {
   display: flex;
   flex-direction: column; /* 縦並び */
@@ -9,7 +9,7 @@
   padding: 0 20px; /* 余白 */
 }
 
-/* 問題文、タイトルのスタイル */
+/* 問題文とタイトルのスタイル */
 #question, #title {
   font-size: 1.5rem; /* 文字サイズ */
   margin-bottom: 20px; /* 下の余白 */
